@@ -69,6 +69,7 @@ public class Weapons : MonoBehaviour
             if (random <= (float)i / (float)RarityLevel.Length)
             {
                 Rarity = (RarityLevel)i;
+                transform.gameObject.AddComponent(typeof(Light));
                 return;
             }
         }
