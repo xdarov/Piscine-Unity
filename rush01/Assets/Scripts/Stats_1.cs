@@ -12,6 +12,6 @@ public class Stats_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txt.text = "FOR = " + player_stats.STR + "\n\nAGI = " + player_stats.AGI + "\n\nCON = " + player_stats.CON + "\n\ndmgMin = " + player_stats.minDMG + "\n\ndmgMax = " + player_stats.maxDMG;
+        txt.text = "STR = " + player_stats.STR + "\n\nAGI = " + player_stats.AGI + "\n\nCON = " + player_stats.CON + "\n\ndmgMin = " + player_stats.minDMG + "\n\ndmgMax = " + player_stats.maxDMG;
     }
 }

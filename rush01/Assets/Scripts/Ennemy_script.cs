@@ -26,7 +26,6 @@ public class Ennemy_script : MonoBehaviour
         {
             if ((player.hit.collider.tag == "zombie" || player.animator.GetInteger("State") == 2) && player.zombie_stats.hp > 0)
             {
-                Debug.Log("Im in babe");
                 slider_go.SetActive(true);
                 txt.enabled = true;
                 slider.maxValue = player.zombie_stats.CON * 5;

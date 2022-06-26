@@ -17,6 +17,7 @@ public class Zombie_scripts : MonoBehaviour
     public bool ishiting;
     public GameObject health_pot;
     public Weapons DropWeapon;
+    public bool Boss;
 
     public int STR;
     public int AGI;
@@ -40,16 +41,30 @@ public class Zombie_scripts : MonoBehaviour
 
         level = player_stats.level;
         // + 15% par lvl
-        CON = (int)(2 * (1 + 0.4 * (level - 1)));
-        AGI = (int)(10 * (1 + 0.4 * (level - 1)));
-        STR = (int)(4 * (1 + 0.4 * (level - 1)));
-        ARMOR = (int)(10 * (1 + 0.2 * (level - 1)));
-        xp = (int)(20 * (1 + 0.6 * (level - 1)));
-        money = (int)(2 * (1 + 0.5 * (level - 1)));
-
-        hp = 5 * CON;
-        minDMG = STR / 2;
-        maxDMG = minDMG + 4;
+        if (!Boss)
+        {
+            CON = (int)(2 * (1 + 0.4 * (level - 1)));
+            AGI = (int)(10 * (1 + 0.4 * (level - 1)));
+            STR = (int)(4 * (1 + 0.4 * (level - 1)));
+            ARMOR = (int)(10 * (1 + 0.2 * (level - 1)));
+            xp = (int)(20 * (1 + 0.6 * (level - 1)));
+            money = (int)(2 * (1 + 0.5 * (level - 1)));
+            hp = 5 * CON;
+            minDMG = STR / 2;
+            maxDMG = minDMG + 4;
+        }
+        else
+        {
+            CON = 200;
+            AGI = 100;
+            STR = 200;
+            ARMOR = 1;
+            xp = 10000;
+            money = 100;
+            hp = 5 * CON;
+            minDMG = STR / 2;
+            maxDMG = minDMG + 4;
+        }
     }
 
     // Update is called once per frame
@@ -88,9 +103,9 @@ public class Zombie_scripts : MonoBehaviour
 
     public void attack()
     {
-        if (Random.Range(0, 100) < (75 + AGI - player_stats.AGI))
+        if (Random.Range(0, 100) < (75 + AGI - (player_stats.AGI)))
         {
-            player_stats.hp -= (int)(Random.Range(minDMG, maxDMG) * (1 - player_stats.ARMOR / 200));
+            player_stats.hp -= (int)(Random.Range(minDMG, maxDMG) * (1 - player_stats.ARMOR / 100));
             if (player_stats.hp <= 0)
             {
                 xp += player_stats.xp;

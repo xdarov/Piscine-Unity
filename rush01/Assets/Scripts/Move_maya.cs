@@ -70,6 +70,7 @@ public class Move_maya : MonoBehaviour
     public void plus_for()
     {
         STR += 1;
+
         stats_point -= 1;
         set_stats();
     }
@@ -85,6 +86,7 @@ public class Move_maya : MonoBehaviour
     {
         stats_point -= 1;
         AGI += 1;
+        ARMOR +=1;
         set_stats();
     }
 
@@ -92,7 +94,7 @@ public class Move_maya : MonoBehaviour
     {
         hp = 5 * CON;
         minDMG = STR / 2;
-        maxDMG = minDMG + 4;
+        maxDMG = (minDMG * 1.25f);
     }
 
     // Update is called once per frame

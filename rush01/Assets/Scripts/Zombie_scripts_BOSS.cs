@@ -47,9 +47,9 @@ public class Zombie_scripts_BOSS : MonoBehaviour
         xp = (int)(20 * (1 + 0.6 * (level - 1)));
         money = (int)(2 * (1 + 0.5 * (level - 1)));
 
-        hp = 3000000;
-        minDMG = 25;
-        maxDMG = 200;
+        hp = 500;
+        minDMG = 15;
+        maxDMG = 25;
     }
 
     // Update is called once per frame
@@ -69,7 +69,7 @@ public class Zombie_scripts_BOSS : MonoBehaviour
             {
                 ischasing = false;
                 animator.SetInteger("State", 0);
-                nav.SetDestination(transform.position);
+                //nav.SetDestination(transform.position);
             }
             if (ischasing && player)
             {
