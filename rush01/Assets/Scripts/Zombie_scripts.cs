@@ -39,10 +39,10 @@ public class Zombie_scripts : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         player_stats = player.GetComponent<Move_maya>();
 
-        level = player_stats.level;
         // + 15% par lvl
         if (!Boss)
         {
+            level = player_stats.level;
             CON = (int)(2 * (1 + 0.4 * (level - 1)));
             AGI = (int)(10 * (1 + 0.4 * (level - 1)));
             STR = (int)(4 * (1 + 0.4 * (level - 1)));
@@ -64,6 +64,7 @@ public class Zombie_scripts : MonoBehaviour
             hp = 5 * CON;
             minDMG = STR / 2;
             maxDMG = minDMG + 4;
+            level = 1000;
         }
     }
 

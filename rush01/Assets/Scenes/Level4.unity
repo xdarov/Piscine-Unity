@@ -8025,6 +8025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114749684541237746, guid: da39d82aefb1a4110a7974bbd3597cd2,
         type: 3}
+      propertyPath: Boss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114749684541237746, guid: da39d82aefb1a4110a7974bbd3597cd2,
+        type: 3}
       propertyPath: ARMOR
       value: 10
       objectReference: {fileID: 0}
@@ -8120,51 +8125,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da39d82aefb1a4110a7974bbd3597cd2, type: 3}
---- !u!1 &1178240702 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1144772183660104, guid: da39d82aefb1a4110a7974bbd3597cd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1178240701}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1178240703 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4190218370938202, guid: da39d82aefb1a4110a7974bbd3597cd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1178240701}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1178240704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178240702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fe4a6affc314ba2bd09717cccf9e89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1178240703}
-  ischasing: 0
-  range: 0
-  atk_range: 0
-  hp: 0
-  animator: {fileID: 0}
-  time: 0
-  player_stats: {fileID: 0}
-  ishiting: 0
-  health_pot: {fileID: 0}
-  DropWeapon: {fileID: 0}
-  STR: 0
-  AGI: 0
-  CON: 0
-  ARMOR: 0
-  minDMG: 0
-  maxDMG: 0
-  baseDMG: 0
-  level: 0
-  xp: 0
-  money: 0
 --- !u!1 &1183744837
 GameObject:
   m_ObjectHideFlags: 0
@@ -8204,7 +8164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.022000002, y: 0.11000001}
   m_AnchorMax: {x: 0.22874573, y: 0.20436066}
-  m_AnchoredPosition: {x: 0.14001465, y: 0.3499756}
+  m_AnchoredPosition: {x: 0.14013672, y: 0.3499756}
   m_SizeDelta: {x: 0.48999786, y: 0.29999924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183744839
@@ -10852,7 +10812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.022000002, y: 0.019360658}
   m_AnchorMax: {x: 0.22874573, y: 0.11336066}
-  m_AnchoredPosition: {x: 0.24499512, y: -0.045288086}
+  m_AnchoredPosition: {x: 0.24511719, y: -0.045410156}
   m_SizeDelta: {x: 0.48999023, y: 0.29999542}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621340410
