@@ -15,13 +15,14 @@ public class Weapons : MonoBehaviour
     public RarityLevel Rarity;
 
     public ToolTip ToolTip;
+    private GameObject obj_halo;
 
     public enum RarityLevel
     {
+        Common,
+        NonCommon,
+        Magic,
         Legendaire,
-        Magique,
-        NonCommun,
-        Commun,
         Length
     }
 
@@ -58,20 +59,18 @@ public class Weapons : MonoBehaviour
 
     public void SetRandomStats()
     {
+        int i;
+        var halo_list = new List<string>() { "Halo_common", "Halo_noncommon", "Halo_magic", "Halo_legendary" };
+
         ToolTip = gameObject.GetComponent<ToolTip>();
         Damage = Random.Range(AttackMin, AttackMax);
         AttackSpeed = Random.Range(AttackSpeedMin, AttackSpeedMax);
         AttackSpeed *= GameManager.gm.Player.level * 1.5f;
-        Damage *= GameManager.gm.Player.level * 1.5f;
-        for (int i = 1; i < (int)RarityLevel.Length; i++)
-        {
-            float random = Random.Range(0f, 1f);
-            if (random <= (float)i / (float)RarityLevel.Length)
-            {
-                Rarity = (RarityLevel)i;
-                transform.gameObject.AddComponent(typeof(Light));
-                return;
-            }
-        }
+        i = Random.Range(0, 3);
+        Rarity = (RarityLevel)i;
+        obj_halo = Instantiate(GameObject.Find(halo_list[i]));
+        obj_halo.transform.position = transform.position;
+        obj_halo.gameObject.transform.SetParent(this.transform);
+        Damage *= GameManager.gm.Player.level * 1.5f * (1f + ((float)i / 10f));
     }
 }
