@@ -66,7 +66,7 @@ public class Weapons : MonoBehaviour
         Damage = Random.Range(AttackMin, AttackMax);
         AttackSpeed = Random.Range(AttackSpeedMin, AttackSpeedMax);
         AttackSpeed *= GameManager.gm.Player.level * 1.5f;
-        i = Random.Range(0, 3);
+        i = Random.Range(0, 4);
         Rarity = (RarityLevel)i;
         obj_halo = Instantiate(GameObject.Find(halo_list[i]));
         obj_halo.transform.position = transform.position;
